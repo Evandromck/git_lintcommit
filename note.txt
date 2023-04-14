@@ -1,0 +1,16 @@
+Começo 
+
+# Install commitlint cli and conventional config
+
+yarn add @commitlint/config-conventional @commitlint/cli
+
+# Configure commitlint to use conventional 
+echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+( config criar um arquivo (commitlint.config.js) e colocar o conteudo -> module.exports = {extends: ['@commitlint/config-conventional']} )
+
+#No Package.json colocar o husky
+"husky":{
+    "hooks":{
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
