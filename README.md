@@ -1,1 +1,36 @@
 # git_lintcommit
+Começo 
+
+# Install commitlint cli and conventional config
+
+yarn add @commitlint/config-conventional @commitlint/cli
+
+# Configure commitlint to use conventional 
+echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+( config criar um arquivo (commitlint.config.js) e colocar o conteudo -> module.exports = {extends: ['@commitlint/config-conventional']} )
+
+#No Package.json colocar o husky
+"husky":{
+    "hooks":{
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+
+teste
+  git add .
+
+  git commit -m "feat: add initial setup"
+  [master (root-commit) af64084] feat: add initial setup
+ 6 files changed, 1388 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .vscode/settings.json
+ create mode 100644 commitlint.config.js
+ create mode 100644 note.txt
+ create mode 100644 package.json
+ create mode 100644 yarn.lock
+
+ #Install commitizen para persolanizar os commitizen
+ yarn add commitizen -D
+
+ #instalar 
+ yarn add commitizen init cz-conventional-changelog --yarn --dev --exact
